@@ -7,6 +7,62 @@ Here's a One-Liner to Import it into your PS Session.
 iwr -useb https://tinyurl.com/Get-QuantumRandom | iex
 ```
 
+# Usage
+```
+PS C:\WINDOWS\system32> Get-QuantumRandom
+960070456
+
+PS C:\WINDOWS\system32> Get-QuantumRandom -Minimum 10 -Maximum 50 -Size 5
+15
+25
+19
+49
+28
+
+PS C:\WINDOWS\system32> Get-QuantumRandom -InputArray (1..20)
+9
+
+PS C:\WINDOWS\system32> Get-QuantumRandom -InputArray (0..5) -Shuffle
+0
+2
+1
+4
+5
+3
+
+PS C:\WINDOWS\system32> Get-QuantumRandom -Dictionary
+jingle
+
+PS C:\WINDOWS\system32> Get-QuantumRandom -Dictionary -Shuffle -Verbose
+VERBOSE: GET https://raw.githubusercontent.com/AlecMcCutcheon/Get-QuantumRandom/main/QDictionary.txt with 0-byte payload
+VERBOSE: received 3864811-byte response of content type text/plain; charset=utf-8
+VERBOSE: InputArray Size: 370105.
+
+VERBOSE: Collecting Non-Repeating True Random Data to pair with InputArray...
+
+VERBOSE: 63.0922%
+
+[...]
+
+VERBOSE: 100.0000%
+
+VERBOSE: True Random Data Collection Complete.
+
+VERBOSE: Shuffle completed in 40.501 seconds
+
+VERBOSE: OutputArray Size: 370105.
+
+cacogenesis
+eunuch
+wartyback
+tridimensionally
+scenic
+dumbfounded
+tauropolos
+struthioniformes
+[...]
+
+```
 # Where:
 ```
 -Minimum <int>          The minimum number set for the true random number range (Default: 0) [Optional]
