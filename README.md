@@ -9,19 +9,19 @@ iwr -useb https://tinyurl.com/Get-QuantumRandom | iex
 
 # Where:
 ```
--Minimum <int>       The minimum number set for the true random number range (Default: 0) [Optional]
+-Minimum <int>          The minimum number set for the true random number range (Default: 0) [Optional]
 
 
--Maximum <int>       The maximum number set for the true random number range (Default: 2,147,483,647 ) [Optional]
+-Maximum <int>          The maximum number set for the true random number range (Default: 2,147,483,647 ) [Optional]
 
 
--Size <int>       The number of true name number to generate within the range (Default: 1) [Optional]
+-Size <int>             The number of true name number to generate within the range (Default: 1) [Optional]
 
 # If No Parameters, Generates a random Number
 
 -------------------------------------------OR-------------------------------------------------------
 
--InputArray <array>       An array to manipulate using the QRNG (Default: null) [Required]
+-InputArray <array>     An array to manipulate using the QRNG (Default: null) [Required]
 
 -Shuffle <switch>       A Switch to Shuffle the InputArray or not (Default: False) [Optional]
                           - If True, Uses the QRNG to randomly shuffe the InputArray
