@@ -8,7 +8,7 @@ Here's a One-Liner to Import it into your PS Session.
 iwr -useb https://tinyurl.com/Get-QRandom | iex
 ```
 
-# Roadmap/Ideas
+# Roadmap/Ideas: 
 ```
 
 - Passwords/CharSets
