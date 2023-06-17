@@ -13,7 +13,7 @@ function Get-QuantumRandom {
     [Parameter(ParameterSetName='DictionaryQManipulation')]
     [switch]$Shuffle=$false,
     [Parameter(Mandatory=$true, ParameterSetName='DictionaryQManipulation')]
-    [switch]$Dictionary=$false
+    [switch]$Dictionary=$true
     );
 
     if ($Dictionary) {
@@ -108,3 +108,5 @@ function Get-QuantumRandom {
     # Return the result
     return $response
 }
+
+Write-Output "Get-QuantumRandom Was Been Added to The Current PS Session."
