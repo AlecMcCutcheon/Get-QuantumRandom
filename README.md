@@ -80,7 +80,7 @@ struthioniformes
 -InputArray <array>     An array to manipulate using the QRNG (Default: null) [Required]
 
 -Shuffle <switch>       A Switch to Shuffle the InputArray or not (Default: False) [Optional]
-                          - If True, Uses the QRNG to randomly shuffe the InputArray
+                          - If True, Uses the QRNG to randomly shuffle the InputArray
                           - If False, Uses the QRNG to randomly choose a value from the InputArray
 
 # If Only InputArray, Picks a random value from InputArray
@@ -92,7 +92,7 @@ struthioniformes
                           - If False, Allows Other Modes to be used (Default: False)
 
 -Shuffle <switch>       A Switch to Shuffle the InputArray or not (Default: False) [Optional]
-                          - If True, Uses the QRNG to randomly shuffe the Dictionary
+                          - If True, Uses the QRNG to randomly shuffle the Dictionary
                           - If False, Uses the QRNG to randomly choose a value from the Dictionary
 
 # If Only Dictionary, Picks a random word from Dictionary
