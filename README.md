@@ -106,7 +106,16 @@ struthioniformes
 
 # How
 ```
-The function initially retrieves random numbers from the QRNG API, which are known to be generated based on inherently random quantum processes. These quantum processes ensure that the obtained random numbers possess the properties of true randomness. The obtained random numbers are then used to determine the positions of elements in the input array. By associating each random number with an index of the input array, the function establishes a mapping between the random numbers and the array elements. The function ensures that the obtained random numbers are unique, so that each index of the input array is mapped to a different random number. This step is important to avoid repetitions and maintain the integrity of the shuffling process. The shuffling algorithm used in the function assigns the elements of the input array to new positions based on the unique random numbers. This shuffling process creates a scrambled version of the array where the original order of the elements is randomized.
+The function initially retrieves random numbers from the QRNG API, which are known to be generated based on inherently random quantum processes.
+These quantum processes ensure that the obtained random numbers possess the properties of true randomness.
+The obtained random numbers are then used to determine the positions of elements in the input array.
+By associating each random number with an index of the input array, the function establishes a mapping between the random numbers and the array elements.
+The function ensures that the obtained random numbers are unique, so that each index of the input array is mapped to a different random number.
+This step is important to avoid repetitions and maintain the integrity of the shuffling process.
+The shuffling algorithm used in the function assigns the elements of the input array to new positions based on the unique random numbers.
+This shuffling process creates a scrambled version of the array where the original order of the elements is randomized.
 
-By using the random numbers obtained from the quantum random number generator, the function preserves the underlying quantum randomness throughout the shuffling process. The inherent randomness of the quantum processes involved in generating the random numbers ensures that the final scrambled array retains the properties of true randomness, similar to the original quantum random numbers obtained from the QRNG API.
+By using the random numbers obtained from the quantum random number generator, the function preserves the underlying quantum randomness throughout the shuffling process.
+The inherent randomness of the quantum processes involved in generating the random numbers ensures that the final scrambled array retains the properties of true randomness,
+similar to the original quantum random numbers obtained from the QRNG API.
 ```
