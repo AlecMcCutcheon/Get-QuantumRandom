@@ -7,7 +7,7 @@ Here's a One-Liner to Import it into your PS Session.
 iwr -useb https://tinyurl.com/Get-QuantumRandom | iex
 ```
 
-# Usage
+# Usage:
 ```
 PS C:\WINDOWS\system32> Get-QuantumRandom
 960070456
