@@ -104,7 +104,7 @@ struthioniformes
 
 ```
 
-# How
+# How:
 ```
 The function initially retrieves random numbers from the QRNG API, which are known to be generated based on inherently random quantum processes.
 These quantum processes ensure that the obtained random numbers possess the properties of true randomness.
