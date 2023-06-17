@@ -1,7 +1,7 @@
 # Get-QuantumRandom
 Is a PowerShell function that uses the (Quantum Random Number Generator) http://qrng.ethz.ch API to provide Similar functionality to the built-in Get-Random function, while also providing True Randomness from Quantum mechanics + some extra features.
 
-If anyone would like to contribute with roadmap features or improvments in speed/function and or know of free alternative QRNG services that also generate large numbers feel we to know me know in the issues section.
+If anyone would like to contribute with roadmap features, improvments & Ideas in speed/function and or know of free alternative QRNG services that also generate large numbers feel we to know me know in the issues section.
 
 Here's a One-Liner to Import it into your PS Session.
 ```
