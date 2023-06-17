@@ -4,7 +4,7 @@ Is a PowerShell function that uses the (Quantum Random Number Generator) http://
 
 Here's a One-Liner to Import it into your PS Session.
 ```
-iwr -useb https://tinyurl.com/Get-QuantumRandom | iex
+iwr -useb https://tinyurl.com/Get-QRandom | iex
 ```
 
 # Usage:
