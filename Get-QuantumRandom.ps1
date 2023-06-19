@@ -137,7 +137,7 @@ function Get-QuantumRandom {
         }
     }
     # QGUID
-    if ($PSCmdlet.ParameterSetName -eq 'QGUID'-and $QGUID) {
+    if ($PSCmdlet.ParameterSetName -eq 'QGUID'-and $GUID) {
         $QGUID = (1..$Size) | ForEach-Object {
             ([Guid]::Parse((((Get-QuantumRandom -Minimum 0 -Maximum 15 -size 32 | ForEach-Object { $_.ToString("x") }) -join "") -replace '(\w{8})(\w{4})(\w{4})(\w{4})(\w{12})', '$1-$2-$3-$4-$5'))).Guid
         }
