@@ -2,10 +2,10 @@ function Get-QuantumRandom {
     [CmdletBinding(DefaultParameterSetName = 'QRNG_Main')]
     param (
         [Parameter(ParameterSetName = 'QRNG_Main')]
-        [ValidateRange(0, [Int32]::MaxValue)]
+        [ValidateRange([Int32]::MinValue, [Int32]::MaxValue)]
         [int]$Minimum = 0,
         [Parameter(ParameterSetName = 'QRNG_Main')]
-        [ValidateRange(0, [Int32]::MaxValue)]
+        [ValidateRange([Int32]::MinValue, [Int32]::MaxValue)]
         [int]$Maximum = [Int32]::MaxValue,
         [Parameter(ParameterSetName = 'QRNG_Main')]
         [Parameter(ParameterSetName = 'QRNG_Array')]
