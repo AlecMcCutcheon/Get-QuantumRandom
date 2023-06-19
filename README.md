@@ -11,12 +11,12 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 # Roadmap/Ideas: 
 ```
-
-☑ QRandom Passwords/CharSets
-☑ QRandom Data/Time
-☑ QRandom GUIDs
-☑ QRandom IP Addresses
-☑ QRandom GPS Coordinates
+🗸 QRandom Dictionary
+🗸 QRandom Passwords/CharSets
+🗸 QRandom Data/Time
+🗸 QRandom GUIDs
+🗸 QRandom IP Addresses
+🗸 QRandom GPS Coordinates
 
 - Porting to other Programing languages
 
