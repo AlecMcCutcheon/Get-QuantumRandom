@@ -22,6 +22,62 @@ iwr -useb https://tinyurl.com/PS-QRNG | iex
 
 ```
 
+# Usage:
+```
+PS C:\> Get-QuantumRandom
+777758543
+
+PS C:\> Get-QuantumRandom -InputArray ("A","B","C","D","E","F") 
+A
+
+PS C:\> Get-QuantumRandom -InputArray ("A","B","C","D","E","F")  -Shuffle
+E
+A
+D
+F
+C
+B
+
+PS C:\> Get-QuantumRandom -Dictionary
+taisch
+
+PS C:\> Get-QuantumRandom -GUID -Size 2
+58d5fd7d-39c5-b8e9-1c84-4c65e7a175a2
+56f7c220-d71e-171f-faa5-69bd5273cd9d
+
+PS C:\> Get-QuantumRandom -IPv4
+102.163.239.136
+
+PS C:\> Get-QuantumRandom -DateTime
+Friday, August 20, 9926 9:38:32 PM
+
+PS C:\> Get-QuantumRandom -GPSCoords
+49.93875, -76.83267
+
+PS C:\> Get-QuantumRandom -Password
+FI'7e1C7
+
+PS C:\> Get-QuantumRandom -InputArray (1..4) -Shuffle -Verbose  
+VERBOSE: InputArray Size: 4.
+
+VERBOSE: Collecting Non-Repeating True Random Data to pair with InputArray...
+
+VERBOSE: 60.0%
+
+VERBOSE: 100.0%
+
+VERBOSE: True Random Data Collection Complete.
+
+VERBOSE: Shuffle completed in 0.3977824 seconds.
+
+VERBOSE: OutputArray Size: 4.
+
+2
+4
+3
+1
+```
+
 # Where:
 ```
 
@@ -85,7 +141,7 @@ iwr -useb https://tinyurl.com/PS-QRNG | iex
 
 -Size <int>             The Number of true random GPSCoords to generate (Default: 1) [Optional]
 
---------------------------------------- QPasswords ----------------------------------------------------
+--------------------------------------- QPassword ----------------------------------------------------
 
 -Password <switch>      Indicates whether to generate random Passwords (Default: False) [Required]
 
