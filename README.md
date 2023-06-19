@@ -25,7 +25,7 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 # Where:
 ```
 
-------------------------------------------QRNG------------------------------------------------------
+----------------------------------------- QRNG -----------------------------------------------------
 
 -Minimum <int>          The minimum number set for the true random number range (Default: 0) [Optional]
 
@@ -35,7 +35,7 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 -Size <int>             The number of true random number to generate within the range (Default: 1) [Optional]
 
-===========================================OR========================================================
+========================================== OR =======================================================
 
 -InputArray <array>     An array to manipulate using the QRNG (Default: null) [Required]
 
@@ -43,7 +43,7 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 -Size <int>             The Number of Random Values to pick from the InputArray (Default: 1) [Optional]
 
----------------------------------------QDictionary---------------------------------------------------
+-------------------------------------- QDictionary --------------------------------------------------
 
 -Dictionary <switch>    Indicates whether to set the InputArray to a Pre-Qrandomized English Dictionary (Default: False) [Required]
 
@@ -51,13 +51,13 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 -Size <int>             The Number of Random words to pick from the Dictionary (Default: 1) [Optional]
 
------------------------------------------QGUID-------------------------------------------------------
+---------------------------------------- QGUID ------------------------------------------------------
 
 -GUID <switch)>         Indicates whether to generate random GUIDs (Default: False) [Required]
 
 -Size <int>             The Number of true random GUIDs to generate (Default: 1) [Optional]
 
------------------------------------------QIPv4-------------------------------------------------------
+---------------------------------------- QIPv4 ------------------------------------------------------
 
 -IPV4 <switch>          Indicates whether to generate random IPv4 Addresses (Default: False) [Required]
 
@@ -65,7 +65,7 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 -Size <int>             The Number of true random IPv4 Addresses to generate (Default: 1) [Optional]
 
-----------------------------------------QDateTime-----------------------------------------------------
+--------------------------------------- QDateTime ----------------------------------------------------
 
 -DateTime <switch>      Indicates whether to generate random DateTime Values (Default: False) [Required]
 
@@ -75,7 +75,7 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 -Size <int>             The Number of true random DateTime Values to generate (Default: 1) [Optional]
 
-----------------------------------------QGPSCoords-----------------------------------------------------
+--------------------------------------- QGPSCoords ----------------------------------------------------
 
 -GPSCoords <switch>     Indicates whether to generate random GPSCoords (Default: False) [Required]
 
@@ -85,7 +85,7 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 -Size <int>             The Number of true random GPSCoords to generate (Default: 1) [Optional]
 
-----------------------------------------QPasswords-----------------------------------------------------
+--------------------------------------- QPasswords ----------------------------------------------------
 
 -Password <switch>      Indicates whether to generate random Passwords (Default: False) [Required]
 
@@ -93,7 +93,7 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 
 -Size <int>             The Number of true random Passwords to generate (Default: 1) [Optional]
 
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ALL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ ALL ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -Verbose <switch>       A Switch to Show more info (Default: False) [Optional]
 
