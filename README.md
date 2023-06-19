@@ -24,6 +24,9 @@ iwr -useb https://tinyurl.com/PS-QRNG | iex
 
 # Usage:
 ```
+PS C:\> iwr -useb https://tinyurl.com/PS-QRNG | iex
+Get-QuantumRandom Was Been Added to The Current PS Session.
+
 PS C:\> Get-QuantumRandom
 777758543
 
