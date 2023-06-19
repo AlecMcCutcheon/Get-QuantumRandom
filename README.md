@@ -12,111 +12,90 @@ iwr -useb https://tinyurl.com/Get-QRandom | iex
 # Roadmap/Ideas: 
 ```
 
-- QRandom Passwords/CharSets
-- QRandom Data/Time
-- QRandom GUIDs
-- QRandom IP Addresses
-- QRandom GPS Coordinates
+☑ QRandom Passwords/CharSets
+☑ QRandom Data/Time
+☑ QRandom GUIDs
+☑ QRandom IP Addresses
+☑ QRandom GPS Coordinates
 
 - Porting to other Programing languages
 
 ```
 
-# Usage:
-```
-PS C:\WINDOWS\system32> Get-QuantumRandom
-960070456
-
-PS C:\WINDOWS\system32> Get-QuantumRandom -Minimum 10 -Maximum 50 -Size 5
-15
-25
-19
-49
-28
-
-PS C:\WINDOWS\system32> Get-QuantumRandom -InputArray (1..20)
-9
-
-PS C:\WINDOWS\system32> Get-QuantumRandom -InputArray (0..5) -Shuffle
-0
-2
-1
-4
-5
-3
-
-PS C:\WINDOWS\system32> Get-QuantumRandom -Dictionary
-jingle
-
-PS C:\WINDOWS\system32> Get-QuantumRandom -Dictionary -Shuffle -Verbose
-VERBOSE: GET https://raw.githubusercontent.com/AlecMcCutcheon/Get-QuantumRandom/main/QDictionary.txt with 0-byte payload
-VERBOSE: received 3864811-byte response of content type text/plain; charset=utf-8
-VERBOSE: InputArray Size: 370105.
-
-VERBOSE: Collecting Non-Repeating True Random Data to pair with InputArray...
-
-VERBOSE: 63.0922%
-
-[...]
-
-VERBOSE: 100.0000%
-
-VERBOSE: True Random Data Collection Complete.
-
-VERBOSE: Shuffle completed in 40.501 seconds
-
-VERBOSE: OutputArray Size: 370105.
-
-cacogenesis
-eunuch
-wartyback
-tridimensionally
-scenic
-dumbfounded
-tauropolos
-struthioniformes
-[...]
-
-```
 # Where:
 ```
+
+------------------------------------------QRNG------------------------------------------------------
+
 -Minimum <int>          The minimum number set for the true random number range (Default: 0) [Optional]
 
 
 -Maximum <int>          The maximum number set for the true random number range (Default: 2,147,483,647 ) [Optional]
 
 
--Size <int>             The number of true name number to generate within the range (Default: 1) [Optional]
+-Size <int>             The number of true random number to generate within the range (Default: 1) [Optional]
 
-# If No Parameters, Generates a random Number
-
--------------------------------------------OR-------------------------------------------------------
+===========================================OR========================================================
 
 -InputArray <array>     An array to manipulate using the QRNG (Default: null) [Required]
 
--Shuffle <switch>       A Switch to Shuffle the InputArray or not (Default: False) [Optional]
-                          - If True, Uses the QRNG to randomly shuffle the InputArray
-                          - If False, Uses the QRNG to randomly choose a value from the InputArray
+-Shuffle <switch>       Indicates whether to Shuffle the InputArray (Default: False) [Optional]
 
-# If Only InputArray, Picks a random value from InputArray
+-Size <int>             The Number of Random Values to pick from the InputArray (Default: 1) [Optional]
 
--------------------------------------------OR-------------------------------------------------------
+---------------------------------------QDictionary---------------------------------------------------
 
--Dictionary <switch>    A Switch to set the InputArray to a Pre-Qrandomized English Dictionary (Default: False) [Required]
-                          - If True, Sets the InputArray to a Pre-Qrandomized English Dictionary
-                          - If False, Allows Other Modes to be used (Default: False)
+-Dictionary <switch>    Indicates whether to set the InputArray to a Pre-Qrandomized English Dictionary (Default: False) [Required]
 
--Shuffle <switch>       A Switch to Shuffle the InputArray or not (Default: False) [Optional]
-                          - If True, Uses the QRNG to randomly shuffle the Dictionary
-                          - If False, Uses the QRNG to randomly choose a value from the Dictionary
+-Shuffle <switch>       Indicates whether to Shuffle the Dictionary (Default: False) [Optional]
 
-# If Only Dictionary, Picks a random word from Dictionary
+-Size <int>             The Number of Random words to pick from the Dictionary (Default: 1) [Optional]
 
--------------------------------------------AND-------------------------------------------------------
+-----------------------------------------QGUID-------------------------------------------------------
+
+-GUID <switch)>         Indicates whether to generate random GUIDs (Default: False) [Required]
+
+-Size <int>             The Number of true random GUIDs to generate (Default: 1) [Optional]
+
+-----------------------------------------QIPv4-------------------------------------------------------
+
+-IPV4 <switch>          Indicates whether to generate random IPv4 Addresses (Default: False) [Required]
+
+-Private <switch>       Indicates whether to generate private IPv4 addresses (Default: False) [Optional]
+
+-Size <int>             The Number of true random IPv4 Addresses to generate (Default: 1) [Optional]
+
+----------------------------------------QDateTime-----------------------------------------------------
+
+-DateTime <switch>      Indicates whether to generate random DateTime Values (Default: False) [Required]
+
+-MinimumYear <int>      The Minimum year for generating random DateTime values (Default: 1) [Optional]
+
+-MaximumYear <int>      The Maximum year for generating random DateTime values (Default: 9999) [Optional]
+
+-Size <int>             The Number of true random DateTime Values to generate (Default: 1) [Optional]
+
+----------------------------------------QGPSCoords-----------------------------------------------------
+
+-GPSCoords <switch>     Indicates whether to generate random GPSCoords (Default: False) [Required]
+
+-GooleMapsUrl <switch>  Indicates whether to output Google Maps URLs for generated GPS coordinates (Default: False) [Optional]
+
+-OpenMaps <switch>      Indicates whether to open Google Maps URLs for generated GPS coordinates (Default: False) [Optional]
+
+-Size <int>             The Number of true random GPSCoords to generate (Default: 1) [Optional]
+
+----------------------------------------QPasswords-----------------------------------------------------
+
+-Password <switch>      Indicates whether to generate random Passwords (Default: False) [Required]
+
+-length <int>           The length of the generated passwords. (Default: 8) [Optional]
+
+-Size <int>             The Number of true random Passwords to generate (Default: 1) [Optional]
+
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~ALL~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 -Verbose <switch>       A Switch to Show more info (Default: False) [Optional]
-                          - If True, Shows more info while running the function and the output
-                          - If False, Shows only the output
 
 ```
 
