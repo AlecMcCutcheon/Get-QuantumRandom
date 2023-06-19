@@ -169,7 +169,7 @@ This step is important to avoid repetitions and maintain the integrity of the sh
 The shuffling algorithm used in the function assigns the elements of the input array to new positions based on the unique random numbers.
 This shuffling process creates a scrambled version of the array where the original order of the elements is randomized.
 
-By using the random numbers obtained from the quantum random number generator, the function preserves the underlying quantum randomness throughout the shuffling process.
+By using the random numbers obtained from the QRNG, the function preserves the underlying quantum randomness throughout the shuffling process.
 The inherent randomness of the quantum processes involved in generating the random numbers ensures that the final scrambled array retains the properties of true randomness,
 similar to the original quantum random numbers obtained from the QRNG API.
 ```
