@@ -2,8 +2,10 @@ function Get-QuantumRandom {
     [CmdletBinding(DefaultParameterSetName = 'QRNG_Main')]
     param (
         [Parameter(ParameterSetName = 'QRNG_Main')]
+        [ValidateRange(0, [Int32]::MaxValue)]
         [int]$Minimum = 0,
         [Parameter(ParameterSetName = 'QRNG_Main')]
+        [ValidateRange(0, [Int32]::MaxValue)]
         [int]$Maximum = [Int32]::MaxValue,
         [Parameter(ParameterSetName = 'QRNG_Main')]
         [Parameter(ParameterSetName = 'QRNG_Array')]
@@ -13,6 +15,7 @@ function Get-QuantumRandom {
         [Parameter(ParameterSetName = 'QDateTime')]
         [Parameter(ParameterSetName = 'QGPSCoords')]
         [Parameter(ParameterSetName = 'QPassword')]
+        [ValidateRange(1, [Int32]::MaxValue)]
         [int]$Size = 1,
         [Parameter(ParameterSetName = 'QRNG_Array')]
         [Parameter(ParameterSetName = 'QDictionary')]
@@ -20,14 +23,17 @@ function Get-QuantumRandom {
         [Parameter(ParameterSetName = 'QIPv4')]
         [switch]$Private = $false,
         [Parameter(ParameterSetName = 'QDateTime')]
+        [ValidateRange(1, 9999)]
         [int]$MinimumYear = 1,
         [Parameter(ParameterSetName = 'QDateTime')]
+        [ValidateRange(1, 9999)]
         [int]$MaximumYear = 9999,
         [Parameter(ParameterSetName = 'QGPSCoords')]
         [switch]$GooleMapsUrl = $false,
         [Parameter(ParameterSetName = 'QGPSCoords')]
         [switch]$OpenMaps = $false,
         [Parameter(ParameterSetName = 'QPassword')]
+        [ValidateRange(8, 1000000)]
         [int]$length = 8,
         [Parameter(Mandatory = $true, ParameterSetName = 'QRNG_Array')]
         $InputArray = $null,
