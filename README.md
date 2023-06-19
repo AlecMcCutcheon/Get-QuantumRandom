@@ -6,7 +6,7 @@ The only reason I haven't parallelized the function is because of the limitation
 
 Here's a One-Liner to Import it into your PS Session.
 ```
-iwr -useb https://tinyurl.com/Get-QRandom | iex
+iwr -useb https://tinyurl.com/PS-QRNG | iex
 ```
 
 # Roadmap/Ideas: 
