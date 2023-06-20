@@ -96,6 +96,7 @@ VERBOSE: OutputArray Size: 4.
 -Maximum <int>          The maximum number set for the true random number range (Default: 2,147,483,647 ) [Optional]
 
 -Decimals <int>         The number of random decimals to gentrate (Default: 0) [Optional]
+                          - If Set to -1, Sets Decimals to the number of digits to the left of the decimal
 
 -Size <int>             The number of true random number to generate within the range (Default: 1) [Optional]
 
