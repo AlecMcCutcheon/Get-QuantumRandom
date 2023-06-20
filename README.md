@@ -17,7 +17,7 @@ iwr -useb https://tinyurl.com/PS-QRNG | iex
 🗸 QRandom GUIDs
 🗸 QRandom IP Addresses
 🗸 QRandom GPS Coordinates
-🗸 QRMG Decimals
+🗸 QRNG Decimals
 
 - Porting to other Programing languages
 
