@@ -92,7 +92,6 @@ VERBOSE: OutputArray Size: 4.
 
 -Minimum <int>          The minimum number set for the true random number range (Default: 0) [Optional]
 
-
 -Maximum <int>          The maximum number set for the true random number range (Default: 2,147,483,647 ) [Optional]
 
 -Decimals <int>         The number of random decimals to gentrate (Default: 0) [Optional]
