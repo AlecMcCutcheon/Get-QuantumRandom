@@ -17,6 +17,7 @@ iwr -useb https://tinyurl.com/PS-QRNG | iex
 🗸 QRandom GUIDs
 🗸 QRandom IP Addresses
 🗸 QRandom GPS Coordinates
+🗸 QRMG Decimals
 
 - Porting to other Programing languages
 
@@ -29,6 +30,9 @@ Get-QuantumRandom Was Been Added to The Current PS Session.
 
 PS C:\> Get-QuantumRandom
 777758543
+
+PS C:\> Get-QuantumRandom -Decimals 8
+478913793.37857833
 
 PS C:\> Get-QuantumRandom -InputArray ("A","B","C","D","E","F") 
 A
@@ -91,6 +95,7 @@ VERBOSE: OutputArray Size: 4.
 
 -Maximum <int>          The maximum number set for the true random number range (Default: 2,147,483,647 ) [Optional]
 
+-Decimals <int>         The number of random decimals to gentrate (Default: 0) [Optional]
 
 -Size <int>             The number of true random number to generate within the range (Default: 1) [Optional]
 
