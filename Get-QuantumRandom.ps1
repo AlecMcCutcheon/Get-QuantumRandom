@@ -8,7 +8,7 @@ function Get-QuantumRandom {
         [ValidateRange([Int32]::MinValue, [Int32]::MaxValue)]
         [int]$Maximum = [Int32]::MaxValue,
         [Parameter(ParameterSetName = 'QRNG_Main')]
-        [ValidateRange(0, 16)]
+        [ValidateRange(-1, 16)]
         [int]$Decimals = 0,
         [Parameter(ParameterSetName = 'QRNG_Main')]
         [Parameter(ParameterSetName = 'QRNG_Array')]
@@ -79,16 +79,17 @@ function Get-QuantumRandom {
         if ($InputArray) {
             $Maximum = (($InputArray.Count) - 1)
         }
-        if (!$Shuffle -and $Decimals -gt 0) {
+        if (!$Shuffle -and $Decimals -ne 0) {
             $url = "http://qrng.ethz.ch/api/randint?min=$Minimum&max=$Maximum&size=$Size"
             $url2 = "http://qrng.ethz.ch/api/rand?size=$Size"
             $Integers = ((Invoke-RestMethodWithRetry -Url $url).result)
             $FloatingpointNumbers = ((Invoke-RestMethodWithRetry -Url $url2).result)
             $response = $Integers | ForEach-Object -Begin {$i = 0} -Process {
                 $integer = $_
+                if ($Decimals -eq -1) {$DecimalNum = ([string]($integer) -replace '-').length}else{$DecimalNum = $Decimals} 
                 $floatingPoint = [decimal]($FloatingPointNumbers[$i]) -replace '^0.'
                 $i++
-                (("{0:N$Decimals}" -f [decimal]"$integer.$floatingPoint") -replace ",")
+                (("{0:N$DecimalNum}" -f [decimal]"$integer.$floatingPoint") -replace ",")
             }
         } else {
         $url = "http://qrng.ethz.ch/api/randint?min=$Minimum&max=$Maximum&size=$Size"
