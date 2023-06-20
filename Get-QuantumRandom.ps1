@@ -8,6 +8,9 @@ function Get-QuantumRandom {
         [ValidateRange([Int32]::MinValue, [Int32]::MaxValue)]
         [int]$Maximum = [Int32]::MaxValue,
         [Parameter(ParameterSetName = 'QRNG_Main')]
+        [ValidateRange(0, 16)]
+        [int]$Decimals = 0,
+        [Parameter(ParameterSetName = 'QRNG_Main')]
         [Parameter(ParameterSetName = 'QRNG_Array')]
         [Parameter(ParameterSetName = 'QDictionary')]
         [Parameter(ParameterSetName = 'QGUID')]
@@ -51,13 +54,47 @@ function Get-QuantumRandom {
         [switch]$Password = $false
     );
 
+    function Invoke-RestMethodWithRetry {
+        param (
+            [string]$Url
+        )
+        $retryCount = 0
+        do {
+            try {
+                $response = Invoke-RestMethod -Uri $Url -ErrorAction Stop -Verbose:$false
+                return $response  # Exit the function if successful
+            } catch {
+                if ($retryCount -lt 4) {
+                    $retryCount++
+                    Start-Sleep -Seconds 1
+                } else {
+                    return
+                }
+            }
+        } while ($retryCount -lt 5)
+    }
+
     # QRNG
     if ($PSCmdlet.ParameterSetName -like '*QRNG*') {
         if ($InputArray) {
             $Maximum = (($InputArray.Count) - 1)
         }
+        if (!$Shuffle -and $Decimals -gt 0) {
+            $url = "http://qrng.ethz.ch/api/randint?min=$Minimum&max=$Maximum&size=$Size"
+            $url2 = "http://qrng.ethz.ch/api/rand?size=$Size"
+            $Integers = ((Invoke-RestMethodWithRetry -Url $url).result)
+            $FloatingpointNumbers = ((Invoke-RestMethodWithRetry -Url $url2).result)
+            $response = $Integers | ForEach-Object -Begin {$i = 0} -Process {
+                $integer = $_
+                $floatingPoint = [decimal]($FloatingPointNumbers[$i]) -replace '^0.'
+                $i++
+                (("{0:N$Decimals}" -f [decimal]"$integer.$floatingPoint") -replace ",")
+            }
+        } else {
         $url = "http://qrng.ethz.ch/api/randint?min=$Minimum&max=$Maximum&size=$Size"
-        $response = ((Invoke-RestMethod -Uri $url -Verbose:$false).result)
+        $response = ((Invoke-RestMethodWithRetry -Url $url).result)
+        }
+
         if ($InputArray) {
             if ($Shuffle) {
                 if ($PSBoundParameters.ContainsKey('Verbose')) {
