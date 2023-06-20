@@ -87,9 +87,10 @@ function Get-QuantumRandom {
             $response = $Integers | ForEach-Object -Begin {$i = 0} -Process {
                 $integer = $_
                 if ($Decimals -eq -1) {$DecimalNum = ([string]($integer) -replace '-').length}else{$DecimalNum = $Decimals} 
-                $floatingPoint = ([string]($FloatingPointNumbers[$i]) -replace '^0.').Substring(0, 16 - (16 - $DecimalNum))
+                $floatingPoint = ([string]($FloatingPointNumbers[$i]) -replace '^0.').PadLeft(16, '0')
+                $floatingPointTrimmed = $floatingPoint.Substring(0, ( 16 - (16 - ($DecimalNum) ) ) )
                 $i++
-                Write-Output "$integer.$floatingPoint"
+                Write-Output "$integer.$floatingPointTrimmed"
             }
         } else {
         $url = "http://qrng.ethz.ch/api/randint?min=$Minimum&max=$Maximum&size=$Size"
