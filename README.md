@@ -19,7 +19,7 @@ iwr -useb https://tinyurl.com/PS-QRNG | iex
 🗸 QRandom GPS Coordinates
 🗸 QRNG Decimals
 
-🗸 GRNG API retry mechanism
+🗸 QRNG API retry mechanism
 - Porting to other Programing languages
 
 ```
